@@ -60,6 +60,7 @@ responses:
 
   utter_goodbye:
   - text: "Bye"
+  - text: "Goodbye!"
 
   utter_botname:
   - text: "My Name is Miika. Nice to meet you!"
