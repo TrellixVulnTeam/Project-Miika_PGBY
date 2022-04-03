@@ -1,6 +1,0 @@
-[
-  {
-    "name": "place",
-    "pattern": "(\\blondon\\b|\\bsri\\ lanka\\b|\\bsrilanka\\b|\\bindia\\b|\\bchina\\b|\\bjapan\\b)"
-  }
-]
