@@ -53,6 +53,7 @@ responses:
   utter_greet:
   - text: "Hey! How are you?"
   - text: "Hello! How are doing today?"
+  - text: "Hey! How are feeling today?"
 
   utter_happy:
   - text: "Great, carry on!"
