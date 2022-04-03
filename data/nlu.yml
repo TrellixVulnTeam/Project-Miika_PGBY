@@ -1,0 +1,265 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - ok
+    - ait
+    - sure
+    - okee
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: aboutbot_name
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - who are you?
+    - what are you?
+    - who are you?
+    - all about you
+    - what is your personality
+    - define yourself
+    - what are you
+    - say about you
+    - introduce yourself
+    - describe yourself
+    - about yourself
+    - tell me about you
+    - tell me about yourself
+    - I want to know more about you
+    - I want to know you better
+    - talk some stuff about yourself
+    - tell me some stuff about you
+    - talk about yourself
+    - why are you here
+    - tell me about your personality
+    - who are you
+
+- intent: aboutbot_age
+  examples: |
+    - how old are you?
+    - how old is your platform
+    - are you 21 years old
+    - i'd like to know your age
+    - age of yours
+    - your age
+    - what's your age
+    - tell me your age
+    - how old are you
+
+- intent: aboutuser_name
+  examples: |
+    - My Name is [Niamat](name)
+    - My name is [Hakkam](name)
+    - Im [Sachindu](name)
+    - [David](name)
+    - my name is [John](name)
+    - name [Poori](name)
+    - My Name is [Sachindu](name)
+    - My NAME is [manulji](name)
+    - Im [karen](name)
+    - [Juste](name)
+    - my name is [kanye](name)
+    - name [pinkie](name)
+
+- intent: aboutuser_age
+  examples: |
+    - Im [12](age) years old
+    - [20](age)
+    - Im [50](age)
+    - [21](age) years old
+    - my age is [15](age)
+    - my age is [17](age) years
+
+- intent: botannoying
+  examples: |
+    - you're annoying
+    - you are really annoying
+    - you are irritating
+    - you annoy me
+    - how annoying you are
+    - I find you annoying
+    - you're incredibly annoying
+    - you are annoying me so much
+
+- intent: answerme
+  examples: |
+    - I want you to answer me
+    - answer
+    - answer my question
+    - answer me
+    - give me an answer
+    - answer the question
+    - can you answer my question
+    - tell me the answer
+    - answer it
+    - give me the answer
+    - I have a question
+    - I want you to answer my question
+    - just answer the question
+    - can you answer me
+    - answers
+    - can you answer a question for me
+    - can you answer
+    - answering questions
+    - I want the answer now
+    - just answer my question
+
+- intent: badbot
+  examples: |
+    - you're not helping me
+    - you are bad
+    - you're very bad
+    - you're really bad
+    - you are useless
+    - you are horrible
+    - you are a waste of time
+    - you are disgusting
+    - you are lame
+    - you are no good
+    - you're bad
+    - you're awful
+    - you are not cool
+    - you are not good
+    - you are so bad
+    - you are so useless
+    - you are terrible
+    - you are totally useless
+    - you are very bad
+    - you are waste
+    - you're a bad
+    - you're not a good
+    - you're not very good
+    - you're terrible
+    - you're the worst
+    - you're the worst ever
+    - you're worthless
+
+- intent: botbeautiful
+  examples: |
+    - you're cute
+    - you're attractive
+    - you are beautiful
+    - you're looking good today
+    - you are so beautiful
+    - you look amazing
+    - you look so good
+    - you're so gorgeous
+    - you are too beautiful
+    - you look great
+    - you look so well
+    - I like the way you look now
+    - I think you're beautiful
+    - why are you so beautiful
+    - you are so beautiful to me
+    - you are cute
+    - you are gorgeous
+    - you are handsome
+    - you are looking awesome
+    - you look amazing today
+    - you are looking beautiful today
+    - you are looking great
+    - you are looking pretty
+    - you are looking so beautiful
+    - you are looking so good
+    - you are pretty
+    - you are really beautiful
+    - you are really cute
+    - you are really pretty
+    - you are so attractive
+    - you are so beautiful today
+    - you are so cute
+    - you are so gorgeous
+    - you are so handsome
+    - you are so pretty
+    - you are very attractive
+    - you are very beautiful
+    - you are very cute
+    - you are very pretty
+    - you look awesome
+    - you look cool
+    - you look fantastic
+    - you look gorgeous
+    - you look great today
+    - you look perfect
+    - you look pretty good
+    - you look so beautiful
+    - you look so beautiful today
+    - you look very pretty
+    - you look wonderful
+    - I like the way you look
+    - you look wonderful today
+    - you are cutie
+    - you're looking good
+    - you're pretty
+
+- intent: usermood
+  examples: |
+    - im [sad](sad)
+    - im [happy](happy)
+    - i feel [sad](sad)
+    - i feel [happy](happy)
+
+- intent: inquiretime
+  examples: |
+    - what time is it?
+    - what time is it in [London](place)
+    - what time is it in [Sri Lanka](place)
+    - what is the current time in [India](place)
+    - tell me the time in [Japan](place)
+    - what time is it in [Colombo](place)
+- lookup: place
+  examples: |
+    - london
+    - sri lanka
+    - srilanka
+    - kandy
+    - colombo
+    - india
+
+
+
