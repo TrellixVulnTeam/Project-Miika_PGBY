@@ -25,6 +25,9 @@ for convo in convoFlow:
         questions.append(dialog[convo[i]])
         answers.append(dialog[convo[i+1]])
         
+# Deleting unused variables
+del(convo, conversation , dialog, convoFlow, line, lines)   
+        
 # Sorting dialogs based on length.
 sortedQues = []
 sortedAns = []
@@ -60,3 +63,31 @@ for line in sortedQues:
     
 for line in sortedAns:
     formattedAns.append(formatText(line))
+    
+for i in range(len(formattedAns)):
+    formattedAns[i] = ' '.join(formattedAns[i].split()[:11])
+    
+# Deleting unused variables
+del(answers, i , line, questions, sortedAns, sortedQues)   
+
+# Limiting dataset to 30000 values
+formattedQues = formattedQues[:30000]
+formattedAns = formattedAns[:30000]
+
+#Removing similar sentences
+word2count = {}
+
+for line in formattedQues:
+    for word in line.split():
+        if word not in word2count:
+            word2count[word] = 1
+        else:
+            word2count[word] += 1
+for line in formattedAns:
+    for word in line.split():
+        if word not in word2count:
+            word2count[word] = 1
+        else:
+            word2count[word] += 1
+       
+del(word, line)
