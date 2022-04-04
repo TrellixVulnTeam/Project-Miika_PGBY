@@ -9,12 +9,13 @@ intents:
   - aboutbot_age
   - aboutuser_name
   - aboutuser_age
-  - botannoying
+  - bot_annoying
   - answerme
-  - badbot
-  - botbeautiful
+  - bot_bad
+  - bot_beautiful
   - inquiretime
   - usermood
+  - user_wantstalk
 
 entities:
   - name
@@ -84,7 +85,7 @@ responses:
     - text: "Hi {name}. Nice to meet you!"
 
   utter_userage_response:
-    - text: "You are {age} years old! Nice!"
+    - text: "Nice! How Can I Help You Today?"
 
   utter_acknowledgeuser:
     - text: "That's nice!"
@@ -111,11 +112,19 @@ responses:
 
   utter_happymood:
     - text: "Can I Ask Why u are Happy?"
-    - text: "Why are you happy?"
+    - text: "Why are you happy {name}?"
 
   utter_sadmood:
     - text: "Can I Ask Why u are Sad?"
-    - text: "Why are you sad?"
+    - text: "Why are you sad {name}?"
+
+  utter_talkresponse:
+    - text: "Im here for You! What's bothering you?"
+    - text: "Im here for You! What's on your mind?"
+    - text: "Oh no! Why do you feel lonely?"
+    - text: "Do You want to talk?"
+    - text: "I am always here for you to talk to. Tell me whats on your mind."
+
 
 
 actions:

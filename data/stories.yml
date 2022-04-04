@@ -4,8 +4,8 @@ stories:
 
 - story: get to know
   steps:
-  - action: utter_greet
   - intent: greet
+  - action: utter_greet
   - action: utter_asktoknow
   - action: utter_aboutuser_name
   - intent: aboutuser_name
@@ -14,16 +14,21 @@ stories:
   - intent: aboutuser_age
   - action: utter_userage_response
 
-- story: Welcome message, premium user
+- story: Happy Path
   steps:
    - intent: usermood
    - slot_was_set:
      - happy: true
    - action: utter_happymood
 
-- story: Welcome message, basic user
+- story: Sad Path
   steps:
    - intent: usermood
    - slot_was_set:
      - sad: true
    - action: utter_sadmood
+
+- story: user wants to talk
+  steps:
+    - intent: user_wantstalk
+    - action: utter_talkresponse
