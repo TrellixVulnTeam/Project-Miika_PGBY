@@ -105,6 +105,18 @@ nlu:
     - [Juste](name)
     - my name is [kanye](name)
     - name [pinkie](name)
+    - My Name is [George](name)
+    - My name is [Sach](name)
+    - Im [Banu](name)
+    - [Pumudu](name)
+    - my name is [Mahinda](name)
+    - name [Jhivan](name)
+    - My Name is [Mikey](name)
+    - My NAME is [Maka](name)
+    - Im [Maki](name)
+    - [Harry](name)
+    - my name is [Kate](name)
+    - name [Will](name)
 
 - intent: aboutuser_age
   examples: |
@@ -115,7 +127,7 @@ nlu:
     - my age is [15](age)
     - my age is [17](age) years
 
-- intent: botannoying
+- intent: bot_annoying
   examples: |
     - you're annoying
     - you are really annoying
@@ -149,7 +161,7 @@ nlu:
     - I want the answer now
     - just answer my question
 
-- intent: badbot
+- intent: bot_bad
   examples: |
     - you're not helping me
     - you are bad
@@ -179,7 +191,7 @@ nlu:
     - you're the worst ever
     - you're worthless
 
-- intent: botbeautiful
+- intent: bot_beautiful
   examples: |
     - you're cute
     - you're attractive
@@ -237,12 +249,25 @@ nlu:
     - you're looking good
     - you're pretty
 
-- intent: usermood
+- intent: user_mood
   examples: |
     - im [sad](sad)
     - im [happy](happy)
     - i feel [sad](sad)
     - i feel [happy](happy)
+
+- intent: user_wantstalk
+  examples: |
+    - I want to talk
+    - Im feeling lonely
+    - I want someone to talk to me
+    - i need to talk to someone
+    - i very lonely
+    - i wish someone was here
+    - i feel alone
+    - I am alone
+    - Why is no one helping me?
+    - why am i alone?
 
 - intent: inquiretime
   examples: |
