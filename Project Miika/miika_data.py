@@ -91,3 +91,40 @@ for line in formattedAns:
             word2count[word] += 1
        
 del(word, line)
+
+# Removing words with less than 5 word count
+threshold = 5
+
+vocab = {}
+wordNum = 0
+for word, count in word2count.items():
+    if count >= threshold:
+        vocab[word] = wordNum
+        wordNum += 1
+
+del(word2count, word, count, threshold)
+del(wordNum)
+
+# Adding tokens to classify text
+for i in range(len(formattedAns)):
+    formattedAns[i] = '<SOS> ' + formattedAns[i] + ' <EOS>'
+    
+tokens = ['<PAD>', '<EOS>', '<OUT>', '<SOS>']
+x = len(vocab)
+for token in tokens:
+    vocab[token] = x
+    x += 1
+    
+# Replacing dataset names with variables
+vocab['cameron'] = vocab['<PAD>']
+vocab['<PAD>'] = 0
+
+# Deleting unused variables
+del(token, tokens) 
+del(x)
+
+# Inversing Vocabulary
+inv_vocab = {w:v for v, w in vocab.items()}
+
+# Deleting unused variables
+del(i)
