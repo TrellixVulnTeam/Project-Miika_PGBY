@@ -1,52 +1,51 @@
-# Model Trained Using Kaggle
-# https://www.kaggle.com/niamatmarjan/miika-nlu/edit
+### DATA PROCESSING
 
+# Importing libraries
 import re
 
-# Datasets uploaded to kaggle to train
-import numpy as np
-
-lines = open('../input/dataset/lines.txt', encoding='utf-8',
+# Reading text files into variables
+lines = open('dataset/lines.txt', encoding='utf-8',
              errors='ignore').read().split('\n')
 
-convers = open('../input/dataset/conversations.txt', encoding='utf-8',
-               errors='ignore').read().split('\n')
+conversation = open('dataset/conversations.txt', encoding='utf-8',
+                    errors='ignore').read().split('\n')
 
-exchn = []
-for conver in convers:
-    exchn.append(conver.split(' +++$+++ ')[-1][1:-1].replace("'", " ").replace(",", "").split())
+# Extracting the required data from dataset
+convoFlow = []
+for convo in conversation:
+    convoFlow.append(convo.split(' +++$+++ ')[-1][1:-1].replace("'", " ").replace(",", "").split())
 
-diag = {}
+dialogs = {}
 for line in lines:
-    diag[line.split(' +++$+++ ')[0]] = line.split(' +++$+++ ')[-1]
+    dialogs[line.split(' +++$+++ ')[0]] = line.split(' +++$+++ ')[-1]
 
 ## delete
-del (lines, convers, conver, line)
+del (lines, conversation)
 
+# Mapping Answers to Questions
 questions = []
 answers = []
 
-for conver in exchn:
-    for i in range(len(conver) - 1):
-        questions.append(diag[conver[i]])
-        answers.append(diag[conver[i + 1]])
+# Convo Replies(Answers) get mapped to Convos(Questions)
+for convo in convoFlow:
+    for i in range(len(convo) - 1):
+        questions.append(dialogs[convo[i]])
+        answers.append(dialogs[convo[i + 1]])
 
 ## delete
-del (diag, exchn, conver, i)
+del (dialogs, convoFlow)
 
-###############################
 #        max_len = 13         #
-###############################
-
-sorted_ques = []
-sorted_ans = []
+# Sorting dialogs based on length.
+sortedQues = []
+sortedAns = []
 for i in range(len(questions)):
     if len(questions[i]) < 13:
-        sorted_ques.append(questions[i])
-        sorted_ans.append(answers[i])
+        sortedQues.append(questions[i])
+        sortedAns.append(answers[i])
 
-
-def clean_text(txt):
+# Formatting all punctuations
+def formatText(txt):
     txt = txt.lower()
     txt = re.sub(r"i'm", "i am", txt)
     txt = re.sub(r"he's", "he is", txt)
@@ -63,69 +62,64 @@ def clean_text(txt):
     txt = re.sub(r"[^\w\s]", "", txt)
     return txt
 
+# Appending the formatted text
+formattedQues = []
+formattedAns = []
 
-clean_ques = []
-clean_ans = []
+for line in sortedQues:
+    formattedQues.append(formatText(line))
 
-for line in sorted_ques:
-    clean_ques.append(clean_text(line))
-
-for line in sorted_ans:
-    clean_ans.append(clean_text(line))
+for line in sortedAns:
+    formattedAns.append(formatText(line))
 
 ## delete
-del (answers, questions, line)
+del (answers, questions)
 
-for i in range(len(clean_ans)):
-    clean_ans[i] = ' '.join(clean_ans[i].split()[:11])
+for i in range(len(formattedAns)):
+    formattedAns[i] = ' '.join(formattedAns[i].split()[:11])
 
-###############################
-#                             #
-###############################
+del (sortedAns, sortedQues)
 
-del (sorted_ans, sorted_ques)
-
-## trimming
-clean_ans = clean_ans[:30000]
-clean_ques = clean_ques[:30000]
+# Limiting dataset to 30000 values
+formattedAns = formattedAns[:30000]
+formattedQues = formattedQues[:30000]
 ## delete
 
 
-###  count occurences ###
+# Removing similar sentences
 word2count = {}
 
-for line in clean_ques:
+for line in formattedQues:
     for word in line.split():
         if word not in word2count:
             word2count[word] = 1
         else:
             word2count[word] += 1
-for line in clean_ans:
+for line in formattedAns:
     for word in line.split():
         if word not in word2count:
             word2count[word] = 1
         else:
             word2count[word] += 1
 
-## delete
-del (word, line)
 
-###  remove less frequent ###
-thresh = 5
+# Removing words with less than 5 word count
+threshold = 5
 
 vocab = {}
 word_num = 0
 for word, count in word2count.items():
-    if count >= thresh:
+    if count >= threshold:
         vocab[word] = word_num
         word_num += 1
 
 ## delete
-del (word2count, word, count, thresh)
-del (word_num)
+del (word2count, threshold)
+del word_num
 
-for i in range(len(clean_ans)):
-    clean_ans[i] = '<SOS> ' + clean_ans[i] + ' <EOS>'
+# Adding tokens to classify text
+for i in range(len(formattedAns)):
+    formattedAns[i] = '<SOS> ' + formattedAns[i] + ' <EOS>'
 
 tokens = ['<PAD>', '<EOS>', '<OUT>', '<SOS>']
 x = len(vocab)
@@ -133,59 +127,63 @@ for token in tokens:
     vocab[token] = x
     x += 1
 
+# Replacing dataset names with variables
 vocab['cameron'] = vocab['<PAD>']
 vocab['<PAD>'] = 0
 
 ## delete
-del (token, tokens)
-del (x)
+del tokens
+del x
 
-### inv answers dict ###
+# Inversing Vocabulary
 inv_vocab = {w: v for v, w in vocab.items()}
 
 ## delete
-del (i)
+del i
 
-encoder_inp = []
-for line in clean_ques:
-    lst = []
+# Input for passing text to Calculate Output
+encoderInput = []
+for line in formattedQues:
+    tempList = []
     for word in line.split():
         if word not in vocab:
-            lst.append(vocab['<OUT>'])
+            tempList.append(vocab['<OUT>'])
         else:
-            lst.append(vocab[word])
+            tempList.append(vocab[word])
 
-    encoder_inp.append(lst)
+    encoderInput.append(tempList)
 
-decoder_inp = []
-for line in clean_ans:
-    lst = []
+decoderInput = []
+for line in formattedAns:
+    tempList = []
     for word in line.split():
         if word not in vocab:
-            lst.append(vocab['<OUT>'])
+            tempList.append(vocab['<OUT>'])
         else:
-            lst.append(vocab[word])
-    decoder_inp.append(lst)
+            tempList.append(vocab[word])
+    decoderInput.append(tempList)
 
 ### delete
-del (clean_ans, clean_ques, line, lst, word)
+del (formattedAns, formattedQues)
 
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-encoder_inp = pad_sequences(encoder_inp, 13, padding='post', truncating='post')
-decoder_inp = pad_sequences(decoder_inp, 13, padding='post', truncating='post')
+encoderInput = pad_sequences(encoderInput, 13, padding='post', truncating='post')
+decoderInput = pad_sequences(decoderInput, 13, padding='post', truncating='post')
 
 decoder_final_output = []
-for i in decoder_inp:
+for i in decoderInput:
     decoder_final_output.append(i[1:])
 
 decoder_final_output = pad_sequences(decoder_final_output, 13, padding='post', truncating='post')
 
-del (i)
+del i
 
 from tensorflow.keras.utils import to_categorical
 
 decoder_final_output = to_categorical(decoder_final_output, len(vocab))
+
+### ML MODEL
 
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Dense, Embedding, LSTM, Input
@@ -216,11 +214,18 @@ model = Model([enc_inp, dec_inp], dense_op)
 
 model.compile(loss='categorical_crossentropy', metrics=['acc'], optimizer='adam')
 
-model.fit([encoder_inp, decoder_inp], decoder_final_output, epochs=10)
+model.fit([encoderInput, decoderInput], decoder_final_output, epochs=40)
 
+model.save('miika_model.h5')
+
+### INFERENCE
+
+import numpy as np
+from keras.models import load_model
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input
 
+model = load_model('miika_model.h5')
 enc_model = Model([enc_inp], enc_states)
 
 # decoder Model
@@ -240,15 +245,15 @@ dec_model = Model([dec_inp] + decoder_states_inputs,
 from keras.preprocessing.sequence import pad_sequences
 
 print("##########################################")
-print("#       start chatting ver. 1.0          #")
+print("#              Project Miika             #")
 print("##########################################")
 
 prepro1 = ""
 while prepro1 != 'q':
-    prepro1 = input("you : ")
+    prepro1 = input("You : ")
     ## prepro1 = "Hello"
 
-    prepro1 = clean_text(prepro1)
+    prepro1 = formatText(prepro1)
     ## prepro1 = "hello"
 
     prepro = [prepro1]
@@ -257,15 +262,15 @@ while prepro1 != 'q':
     txt = []
     for x in prepro:
         # x = "hello"
-        lst = []
+        tempList = []
         for y in x.split():
             ## y = "hello"
             try:
-                lst.append(vocab[y])
+                tempList.append(vocab[y])
                 ## vocab['hello'] = 454
             except:
-                lst.append(vocab['<OUT>'])
-        txt.append(lst)
+                tempList.append(vocab['<OUT>'])
+        txt.append(tempList)
 
     ## txt = [[454]]
     txt = pad_sequences(txt, 13, padding='post')
@@ -309,5 +314,5 @@ while prepro1 != 'q':
         ## hi --> <EOS>
         stat = [h, c]
 
-    print("chatbot attention : ", decoded_translation)
+    print("Miika : ", decoded_translation)
     print("==============================================")

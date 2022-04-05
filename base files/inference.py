@@ -23,7 +23,7 @@ dec_model = Model([dec_inp] + decoder_states_inputs,
 from keras.preprocessing.sequence import pad_sequences
 
 print("##########################################")
-print("#       start chatting ver. 1.0          #")
+print("#              Project Miika             #")
 print("##########################################")
 
 prepro1 = ""
@@ -31,7 +31,7 @@ while prepro1 != 'q':
     prepro1 = input("You : ")
     ## prepro1 = "Hello"
 
-    prepro1 = clean_text(prepro1)
+    prepro1 = formatText(prepro1)
     ## prepro1 = "hello"
 
     prepro = [prepro1]
@@ -40,15 +40,15 @@ while prepro1 != 'q':
     txt = []
     for x in prepro:
         # x = "hello"
-        lst = []
+        tempList = []
         for y in x.split():
             ## y = "hello"
             try:
-                lst.append(vocab[y])
+                tempList.append(vocab[y])
                 ## vocab['hello'] = 454
             except:
-                lst.append(vocab['<OUT>'])
-        txt.append(lst)
+                tempList.append(vocab['<OUT>'])
+        txt.append(tempList)
 
     ## txt = [[454]]
     txt = pad_sequences(txt, 13, padding='post')
