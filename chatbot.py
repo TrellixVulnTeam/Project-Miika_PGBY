@@ -134,4 +134,4 @@ while prepro1 != 'q':
         print("==============================================")
 
     except:
-        print("sorry didn't got you , please type again :( ")
+        print("Miika : I'm sorry I didn't get you , Can you tell it again? ")

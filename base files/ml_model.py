@@ -27,4 +27,6 @@ model = Model([enc_inp, dec_inp], dense_op)
 
 model.compile(loss='categorical_crossentropy', metrics=['acc'], optimizer='adam')
 
-model.fit([encoder_inp, decoder_inp], decoder_final_output, epochs=40)
+model.fit([encoderInput, decoderInput], decoder_final_output, epochs=40)
+
+model.save('miika_model.h5')
