@@ -11,7 +11,7 @@ with open('intents.json', 'r') as json_data:
     intents = json.load(json_data)
 
 # loading the saved model to the project
-FILE = "miika_model.onnx"
+FILE = "miika_model.pth"
 data = torch.load(FILE)
 
 # Assigning all saved data from file

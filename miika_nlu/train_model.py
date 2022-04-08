@@ -1,6 +1,5 @@
 # Importing libraries
 import numpy as np
-import random
 import json
 import torch
 import torch.nn as nn
@@ -124,7 +123,7 @@ data = {
     "tags": tags
 }
 
-FILE = "miika_model.onnx"
+FILE = "miika_model.pth"
 torch.save(data, FILE)
 
 print(f'training complete. file saved to {FILE}')
