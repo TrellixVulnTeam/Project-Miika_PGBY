@@ -18,16 +18,41 @@
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye"],
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye"
+      ],
       "responses": [
-        "See you later, thanks for visiting",
-        "Have a nice day",
+        "See you later, Hope to see you again soon!",
+        "Have a nice day. I'll be waiting here for you :D",
         "Bye! Come back again soon."
       ]
     },
     {
+      "tag": "about bot",
+      "patterns": [
+        "are you a bot?",
+        "are you a human?",
+        "who are you?",
+        "what are you?",
+        "what are you",
+        "who are you",
+        "introduce yourself"
+      ],
+      "responses": [
+        "My Name is Miika. Nice to meet you!",
+        "I'm your virtual partner, Miika."
+      ]
+    },
+    {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thanks a lot!"
+      ],
       "responses": [
         "Happy to help!",
         "Any time!",
@@ -51,11 +76,12 @@
       "patterns": [
         "I'm Happy!",
         "I feel happy",
-        "i am happy"
+        "i am happy",
+        "im happy"
       ],
       "responses": [
         "Can I Ask Why u are Happy?",
-        "Why are you happy?"
+        "Why are you happy? :D"
       ]
     },
     {
@@ -66,8 +92,69 @@
         "I aced Maths test"
       ],
       "responses": [
-        "Congratulations! I'm so Proud of You.",
-        "Yay! That's Nice to Hear!"
+        "Congratulations! I'm so Proud of You. :D",
+        "Yay! That's Nice to Hear! :D"
+      ]
+    },
+    {
+      "tag": "sad",
+      "patterns": [
+        "I'm Sad!",
+        "I feel sad",
+        "i am sad",
+        "im sad"
+      ],
+      "responses": [
+        "Can I Ask Why u are Sad?",
+        "Why are you sad? :("
+      ]
+    },
+    {
+      "tag": "sad path 1",
+      "patterns": [
+        "I fell down!",
+        "I hurt myself",
+        "i am bleeding"
+      ],
+      "responses": [
+        "Oh no! Does it hurt?",
+        "That's sad to hear :( How can I be of help?"
+      ]
+    },
+    {
+      "tag": "lonely",
+      "patterns": [
+        "I want to talk",
+        "Im feeling lonely",
+        "I want someone to talk to me",
+        "i very lonely",
+        "I am alone",
+        "why am i alone?",
+        "i feel alone"
+      ],
+      "responses": [
+        "Im here for You! What's bothering you?",
+        "Im here for You! What's on your mind?",
+        "Oh no! Why do you feel lonely?",
+        "Do You want to talk?",
+        "I am always here for you to talk to. Tell me whats on your mind."
+      ]
+    },
+    {
+      "tag": "lonely path 1",
+      "patterns": [
+        "I feel like no one understands me",
+        "people dont understand me",
+        "people dont get me",
+        "they dont understand what im going through",
+        "they dont seem to care",
+        "i feel like im talking to a wall when im talking to people",
+        "people find it hard to understand me"
+      ],
+      "responses": [
+        "Maybe tell me whats on your mind? So i can try to help you?",
+        "I can try to help you clear up your mind",
+        "I can listen to you talk. Maybe I can understand you :D"
       ]
     }
   ]
