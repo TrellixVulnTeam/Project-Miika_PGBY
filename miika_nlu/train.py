@@ -23,7 +23,7 @@ for intent in intents['intents']:
     for pattern in intent['patterns']:
         # tokenize each word in the sentence
         w = tokenize(pattern)
-        # add to our words list
+        # add to the words list
         all_words.extend(w)
         # add to xy pair
         xy.append((w, tag))
