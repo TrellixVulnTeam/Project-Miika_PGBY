@@ -1,8 +1,7 @@
+# Importing libraries
 import random
 import json
-
 import torch
-
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
@@ -11,9 +10,11 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 with open('intents.json', 'r') as json_data:
     intents = json.load(json_data)
 
+# loading the saved model to the project
 FILE = "miika_model.onnx"
 data = torch.load(FILE)
 
+# Assigning all saved data from file
 input_size = data["input_size"]
 hidden_size = data["hidden_size"]
 output_size = data["output_size"]
@@ -28,7 +29,7 @@ model.eval()
 bot_name = "Miika"
 print("Let's chat! (type 'quit' to exit)")
 while True:
-    # sentence = "do you use credit cards?"
+    # sentence = "who are you?"
     sentence = input("You: ")
     if sentence == "quit":
         break
@@ -50,4 +51,4 @@ while True:
             if tag == intent["tag"]:
                 print(f"{bot_name}: {random.choice(intent['responses'])}")
     else:
-        print(f"{bot_name}: I do not understand...")
+        print(f"{bot_name}: Im Sorry I do not understand... Can You Repeat that again?")
