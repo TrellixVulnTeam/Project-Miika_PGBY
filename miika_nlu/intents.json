@@ -45,6 +45,30 @@
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
         "What did the buffalo say when his son left for college? Bison."
       ]
+    },
+    {
+      "tag": "happy",
+      "patterns": [
+        "I'm Happy!",
+        "I feel happy",
+        "i am happy"
+      ],
+      "responses": [
+        "Can I Ask Why u are Happy?",
+        "Why are you happy?"
+      ]
+    },
+    {
+      "tag": "happy path 1",
+      "patterns": [
+        "I scored full marks for Maths!",
+        "I scored high marks for Maths!",
+        "I aced Maths test"
+      ],
+      "responses": [
+        "Congratulations! I'm so Proud of You.",
+        "Yay! That's Nice to Hear!"
+      ]
     }
   ]
 }
