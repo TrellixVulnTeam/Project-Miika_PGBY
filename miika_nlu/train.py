@@ -124,7 +124,7 @@ data = {
     "tags": tags
 }
 
-FILE = "miika_model.pth"
+FILE = "miika_model.onnx"
 torch.save(data, FILE)
 
 print(f'training complete. file saved to {FILE}')

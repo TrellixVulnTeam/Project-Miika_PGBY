@@ -85,7 +85,8 @@
       <workItem from="1649389164706" duration="712000" />
       <workItem from="1649390836950" duration="154000" />
       <workItem from="1649391484351" duration="119000" />
-      <workItem from="1649404190113" duration="1393000" />
+      <workItem from="1649404190113" duration="1767000" />
+      <workItem from="1649424276839" duration="292000" />
     </task>
     <servers />
   </component>
@@ -93,7 +94,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/miika_nlu$chat.coverage" NAME="chat Coverage Results" MODIFIED="1649390947202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/miika_nlu$train.coverage" NAME="train Coverage Results" MODIFIED="1649406910998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/miika_nlu$chat.coverage" NAME="chat Coverage Results" MODIFIED="1649424569351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/miika_nlu$train.coverage" NAME="train Coverage Results" MODIFIED="1649424555701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
