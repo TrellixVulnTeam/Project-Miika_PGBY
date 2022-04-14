@@ -78,7 +78,7 @@ for (pattern_sentence, tag) in xy:
 X_train = np.array(X_train)
 y_train = np.array(y_train)
 
-# Hyper-parameters 
+# Parameters
 num_epochs = 1000
 batch_size = 8
 learning_rate = 0.001
@@ -115,7 +115,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 
 # Loss and optimizer
-criterion = nn.CrossEntropyLoss()
+entropy_loss = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
 # Train the model
@@ -128,7 +128,7 @@ for epoch in range(num_epochs):
         outputs = model(words)
         # if y would be one-hot, we must apply
         # labels = torch.max(labels, 1)[1]
-        loss = criterion(outputs, labels)
+        loss = entropy_loss(outputs, labels)
 
         # Backward and optimize
         optimizer.zero_grad()
