@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
-from nltk_utils import bag_of_words, tokenize, stem
+from nltk_utils import word_bank, tokenize, stem
 from model import NeuralNet
 
 import torch.onnx
@@ -40,12 +40,12 @@ with open('intents.json', 'r') as f:
 all_words = []
 tags = []
 xy = []
-# loop through each sentence in our intents patterns
+# loop through each sentence in our intents inputs
 for intent in intents['intents']:
     tag = intent['tag']
     # add to tag list
     tags.append(tag)
-    for pattern in intent['patterns']:
+    for pattern in intent['inputs']:
         # tokenize each word in the sentence
         w = tokenize(pattern)
         # add to the words list
@@ -60,7 +60,7 @@ all_words = [stem(w) for w in all_words if w not in ignore_words]
 all_words = sorted(set(all_words))
 tags = sorted(set(tags))
 
-print(len(xy), "patterns")
+print(len(xy), "inputs")
 print(len(tags), "tags:", tags)
 print(len(all_words), "unique stemmed words:", all_words)
 
@@ -69,7 +69,7 @@ X_train = []
 y_train = []
 for (pattern_sentence, tag) in xy:
     # X: bag of words for each pattern_sentence
-    bag = bag_of_words(pattern_sentence, all_words)
+    bag = word_bank(pattern_sentence, all_words)
     X_train.append(bag)
     # y: PyTorch CrossEntropyLoss needs only class labels, not one-hot
     label = tags.index(tag)
@@ -152,8 +152,6 @@ data = {
 FILE = "miika_model.pth"
 torch.save(data, FILE)
 
-Convert_ONNX()
+# Convert_ONNX()
 
 print(f'training complete. file saved to {FILE}')
-
-
