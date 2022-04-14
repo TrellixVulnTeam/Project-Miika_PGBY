@@ -2,7 +2,7 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": [
+      "inputs": [
         "Hi",
         "Hey",
         "How are you",
@@ -18,7 +18,7 @@
     },
     {
       "tag": "goodbye",
-      "patterns": [
+      "inputs": [
         "Bye",
         "See you later",
         "Goodbye"
@@ -31,7 +31,7 @@
     },
     {
       "tag": "about bot",
-      "patterns": [
+      "inputs": [
         "are you a bot?",
         "are you a human?",
         "who are you?",
@@ -47,7 +47,7 @@
     },
     {
       "tag": "thanks",
-      "patterns": [
+      "inputs": [
         "Thanks",
         "Thank you",
         "That's helpful",
@@ -61,7 +61,7 @@
     },
     {
       "tag": "funny",
-      "patterns": [
+      "inputs": [
         "Tell me a joke!",
         "Tell me something funny!",
         "Do you know a joke?"
@@ -73,7 +73,7 @@
     },
     {
       "tag": "happy",
-      "patterns": [
+      "inputs": [
         "I'm Happy!",
         "I feel happy",
         "i am happy",
@@ -86,7 +86,7 @@
     },
     {
       "tag": "happy path 1",
-      "patterns": [
+      "inputs": [
         "I scored full marks for Maths!",
         "I scored high marks for Maths!",
         "I aced Maths test"
@@ -98,7 +98,7 @@
     },
     {
       "tag": "sad",
-      "patterns": [
+      "inputs": [
         "I'm Sad!",
         "I feel sad",
         "i am sad",
@@ -111,7 +111,7 @@
     },
     {
       "tag": "sad path 1",
-      "patterns": [
+      "inputs": [
         "I fell down!",
         "I hurt myself",
         "i am bleeding"
@@ -123,7 +123,7 @@
     },
     {
       "tag": "lonely",
-      "patterns": [
+      "inputs": [
         "I want to talk",
         "Im feeling lonely",
         "I want someone to talk to me",
@@ -142,7 +142,7 @@
     },
     {
       "tag": "lonely path 1",
-      "patterns": [
+      "inputs": [
         "I feel like no one understands me",
         "people dont understand me",
         "people dont get me",
