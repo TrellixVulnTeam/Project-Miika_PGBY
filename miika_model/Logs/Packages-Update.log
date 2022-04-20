@@ -1,5 +1,5 @@
 
-=== Mon Mar 21 01:38:35 2022
+=== Mon Feb 21 20:40:34 2022
 
 Packages were changed.
 Update Mode: mergeDefaultDependencies
@@ -45,9 +45,16 @@ The following packages were added:
   com.unity.timeline@1.5.6
   com.unity.ugui@1.0.0
   com.unity.visualscripting@1.6.1
+
+=== Tue Feb 22 19:11:39 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
 The following packages were updated:
-  com.unity.2d.animation from version 6.0.1 to 6.0.5
-  com.unity.2d.pixel-perfect from version 5.0.0 to 5.0.1
-  com.unity.2d.psdimporter from version 5.0.1 to 5.0.4
-  com.unity.2d.spriteshape from version 6.0.0 to 6.0.1
-  com.unity.2d.tilemap.extras from version 2.0.0 to 2.2.0
+  com.unity.collab-proxy from version 1.9.0 to 1.15.12
+  com.unity.ide.rider from version 3.0.7 to 3.0.12
+  com.unity.ide.visualstudio from version 2.0.11 to 2.0.14
+  com.unity.ide.vscode from version 1.2.3 to 1.2.4
+  com.unity.timeline from version 1.5.6 to 1.6.3
+  com.unity.visualscripting from version 1.6.1 to 1.7.6
