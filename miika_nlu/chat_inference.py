@@ -27,11 +27,12 @@ model.load_state_dict(model_state)
 model.eval()
 
 bot_name = "Miika"
-print("Let's chat! (type 'quit' to exit)")
+print("Hi, I'm Miika. What can I do for you today!")
 while True:
     # sentence = "who are you?"
     sentence = input("You: ")
     if sentence == "quit":
+        print("Miika: Hope to See You Soon! Goodbye....")
         break
 
     sentence = tokenize(sentence)

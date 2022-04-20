@@ -51,12 +51,18 @@
         "Thanks",
         "Thank you",
         "That's helpful",
-        "Thanks a lot!"
+        "Thanks a lot!",
+        "Thank You Miika",
+        "Thank you very much miika",
+        "Thanks",
+        "Thank you",
+        "Thank you so much"
       ],
       "responses": [
         "Happy to help!",
         "Any time!",
-        "My pleasure"
+        "My pleasure",
+        "Happy to help! I'm always here when you need me :)"
       ]
     },
     {
@@ -122,6 +128,19 @@
       ]
     },
     {
+      "tag": "sad path 1.1",
+      "inputs": [
+        "It hurts alot!",
+        "it hurting alot",
+        "It's paining",
+        "I am crying"
+      ],
+      "responses": [
+        "Oh no I'm so sorry. Hope You Get Well Soon!",
+        "Oh no. Hope it cures soon"
+      ]
+    },
+    {
       "tag": "lonely",
       "inputs": [
         "I want to talk",
@@ -155,6 +174,30 @@
         "Maybe tell me whats on your mind? So i can try to help you?",
         "I can try to help you clear up your mind",
         "I can listen to you talk. Maybe I can understand you :D"
+      ]
+    },
+    {
+      "tag": "lonely path 1.1",
+      "inputs": [
+        "I feel like i wanna die",
+        "I wanna kill myself",
+        "I wanna kms",
+        "I wanna die"
+      ],
+      "responses": [
+        "Dont say that. Please reach out to your family or friends. I am always here when you need me to! Please tell me whats on ur mind!"
+      ]
+    },
+    {
+      "tag": "lonely path 1.2",
+      "inputs": [
+        "I hate this place",
+        "I wanna leave home",
+        "I hate life",
+        "I wanna put everything away and just leave"
+      ],
+      "responses": [
+        "Dont worry. Someday You Will Have A Nice Future. Things might not always be happy and joy. People have downsides and upsides."
       ]
     }
   ]
