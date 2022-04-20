@@ -14,7 +14,7 @@ public class NetworkManager : MonoBehaviour {
     public BotUI botUI;
     
     // the url at which bot's custom connector is hosted
-    private const string rasa_url = "http://localhost:5000/chatbot";
+    private const string rasa_url = "https://miika-virtual-partner.herokuapp.com/chatbot";
 	
 	[Serializable]
     public class Message
