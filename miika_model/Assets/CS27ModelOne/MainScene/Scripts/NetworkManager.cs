@@ -14,7 +14,7 @@ public class NetworkManager : MonoBehaviour {
     public BotUI botUI;
     
     // the url at which bot's custom connector is hosted
-    private const string rasa_url = "https://miika-virtual-partner.herokuapp.com/chatbot";
+    private const string app_url = "https://miika-virtual-partner.herokuapp.com/chatbot";
 	
 	[Serializable]
     public class Message
@@ -26,10 +26,8 @@ public class NetworkManager : MonoBehaviour {
 
     /// <summary>
     /// This method is called when user has entered their message and hits the send button.
-    /// It calls the <see cref="NetworkManager.PostRequest(string, string)"> coroutine to send
-    /// the user message to the bot and also updates the UI with user message.
     /// </summary>
-    public void SendMessageToRasa () {
+    public void SendMessageToBackend () {
         // get user messasge from input field, create a json object 
         // from user message and then clear input field
         string messageFromInput = botUI.input.text;
@@ -48,16 +46,14 @@ public class NetworkManager : MonoBehaviour {
         botUI.UpdateDisplay("user", messageFromInput, "text");
 
         // Create a post request with the data to send to Rasa server
-        StartCoroutine(PostRequest(rasa_url, jsonBody));
+        StartCoroutine(PostRequest(app_url, jsonBody));
     }
 
     /// <summary>
     /// This is a coroutine to asynchronously send a POST request to the Rasa server with 
     /// the user message. The response is deserialized and rendered on the UI object.
     /// </summary>
-    /// <param name="url">the url where Rasa server is hosted</param>
-    /// <param name="jsonBody">user message serialized into a json object</param>
-    /// <returns></returns>
+    
     IEnumerator PostRequest(string url, string json)
     {
         var uwr = new UnityWebRequest(url, "POST");
