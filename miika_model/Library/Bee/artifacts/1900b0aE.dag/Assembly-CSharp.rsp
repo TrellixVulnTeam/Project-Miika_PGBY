@@ -342,6 +342,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/CS27ModelOne/MainScene/Scripts/BotUI.cs"
+"Assets/CS27ModelOne/MainScene/Scripts/Buttons.cs"
+"Assets/CS27ModelOne/MainScene/Scripts/MainMenu.cs"
 "Assets/CS27ModelOne/MainScene/Scripts/NetworkManager.cs"
 "Assets/CS27ModelOne/MainScene/Scripts/UIManager.cs"
 "Assets/CS27ModelOne/MainScene/Scripts/Utils.cs"

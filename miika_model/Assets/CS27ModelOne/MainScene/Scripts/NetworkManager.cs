@@ -66,7 +66,7 @@ public class NetworkManager : MonoBehaviour {
         yield return uwr.SendWebRequest();
 		
 		RecieveMessage(uwr.downloadHandler.text);
-		Debug.Log("Received: "+ uwr.downloadHandler.text);
+		
 	}	
 
 
