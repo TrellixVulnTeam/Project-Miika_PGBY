@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 import random
 import json
 import torch
-from app.nltk_utils import bag_of_words, tokenize
+from app.nltk_utils import word_bank, tokenize
 from app.model import NeuralNet
 
 app = Flask(__name__)
@@ -30,7 +30,9 @@ try:
 except Exception as e:
 	print(e)
 
-
+@app.route('/')
+def index():
+	return "<h1>Deployed to Heroku</h1>"
 
 
 
@@ -42,7 +44,7 @@ def chatbot_msg():
 		sentence = user_data['message']
 	
 		sentence = tokenize(sentence)
-		X = bag_of_words(sentence, all_words)
+		X = word_bank(sentence, all_words)
 		X = X.reshape(1, X.shape[0])
 		X = torch.from_numpy(X)
 
