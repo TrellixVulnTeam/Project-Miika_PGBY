@@ -145,9 +145,7 @@ public class BotUI : MonoBehaviour {
                 chatMessage.text = message;
                 break;
             case "image":
-                // Create and init Image component
-                Image chatImage = chatBubbleObject.AddComponent<Image>();
-                StartCoroutine(networkManager.SetImageTextureFromUrl(message, chatImage));
+                
                 break;
             case "attachment":
                 break;
