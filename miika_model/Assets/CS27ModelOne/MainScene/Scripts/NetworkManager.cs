@@ -100,49 +100,5 @@ public class NetworkManager : MonoBehaviour {
     /// <param name="url">url where the image resource is located</param>
     /// <param name="image">RawImage object on which the texture will be applied</param>
     /// <returns></returns>
-    public IEnumerator SetImageTextureFromUrl (string url, Image image) {
-        // Send request to get the image resource
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
-        yield return request.SendWebRequest();
-
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            // image could not be retrieved
-            Debug.Log(request.error);
-
-        else {
-            // Create Texture2D from Texture object
-            Texture texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            Texture2D texture2D = texture.ToTexture2D();
-
-            // set max size for image width and height based on chat size limits
-            float imageWidth = 0, imageHeight = 0, texWidth = texture2D.width, texHeight = texture2D.height;
-            if ((texture2D.width > texture2D.height) && texHeight > 0) {
-                // Landscape image
-                imageWidth = texWidth;
-                // Landscape image
-                imageWidth = texWidth;
-                if (imageWidth > 200) imageWidth = 200;
-                float ratio = texWidth / imageWidth;
-                imageHeight = texHeight / ratio;
-            }
-            if ((texture2D.width < texture2D.height) && texWidth > 0) {
-                // Portrait image
-                imageHeight = texHeight;
-                if (imageHeight > 200) imageHeight = 200;
-                float ratio = texHeight / imageHeight;
-                imageWidth = texWidth / ratio;
-            }
-
-            // Resize texture to chat size limits and attach to message
-            // Image object as sprite
-            TextureScale.Bilinear(texture2D, (int)imageWidth, (int)imageHeight);
-            image.sprite = Sprite.Create(
-                texture2D,
-                new Rect(0.0f, 0.0f, texture2D.width, texture2D.height),
-                new Vector2(0.5f, 0.5f), 100.0f);
-
-            // Resize and reposition all chat bubbles
-            StartCoroutine(botUI.RefreshChatBubblePosition());
-        }
-    }
+    
 }
