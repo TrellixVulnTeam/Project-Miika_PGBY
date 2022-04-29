@@ -9,3 +9,6 @@ miika_model contains the base unity model files
 miika_nlu contains the ml model and backend files
 
 Project Miika contains the Main Application
+
+run this link before using the application
+https://miika-virtual-partner.herokuapp.com/
