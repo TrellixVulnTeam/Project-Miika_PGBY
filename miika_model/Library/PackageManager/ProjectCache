@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637845894298378355
-    m_Hash: 115354235
+      ticks: 637870017785474304
+    m_Hash: 1057281977
   m_LockFileStatus:
     m_FilePath: C:/Users/Asus X512/Documents/GitHub/Project-Miika_SDGP/miika_model/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637845894298545399
-    m_Hash: 4130957303
+      ticks: 637870017785484304
+    m_Hash: 318029732
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
