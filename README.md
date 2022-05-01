@@ -5,7 +5,7 @@ personal use, combining elements of visuals, audio and other means.
 
 This Project was implemented Using Pytorch and Unity and is deployed in the Heroku Platform.
 
-miika_model contains the base unity model files
+miika_model contains the base unity model files and frontend files
 miika_nlu contains the ml model and backend files
 
 Project Miika contains the Main Application
