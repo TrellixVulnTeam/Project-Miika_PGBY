@@ -12,3 +12,6 @@ Project Miika contains the Main Application
 
 run this link before using the application
 https://miika-virtual-partner.herokuapp.com/
+
+GitHub Link:
+https://github.com/NimBuzz01/Project-Miika
