@@ -7,7 +7,10 @@
         "Hey",
         "How are you",
         "Hello",
-        "Good day"
+        "Good day",
+        "Sup",
+        "Whats up",
+        "How you doing"
       ],
       "responses": [
         "Hey There! Im Miika. Nice to Meet You!",
@@ -21,12 +24,31 @@
       "inputs": [
         "Bye",
         "See you later",
-        "Goodbye"
+        "Goodbye",
+        "I Shall see you later",
+        "I will go now Bye",
+        "I have to go now ill see you soon",
+        "I have to go now byebye",
+        "i have to go now"
       ],
       "responses": [
         "See you later, Hope to see you again soon!",
         "Have a nice day. I'll be waiting here for you :D",
         "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "what can do",
+      "inputs": [
+        "what can you do?",
+        "how can you help me?",
+        "what is your purpose?",
+        "what things can you do?"
+      ],
+      "responses": [
+        "I am currently programmed to have basic conversations. I continue to increase my knowledge daily",
+        "I can't do much for now but I can have a small conversation with you :)",
+        "Although my functions are limited. I can talk with you."
       ]
     },
     {
@@ -83,7 +105,11 @@
         "I'm Happy!",
         "I feel happy",
         "i am happy",
-        "im happy"
+        "im happy",
+        "Im very happy today",
+        "I happy today",
+        "Im very happy",
+        "Im feeling happy today"
       ],
       "responses": [
         "Can I Ask Why u are Happy?",
@@ -95,7 +121,11 @@
       "inputs": [
         "I scored full marks for Maths!",
         "I scored high marks for Maths!",
-        "I aced Maths test"
+        "I aced Maths test",
+        "I got 100 for maths",
+        "i got good marks for maths",
+        "I got high marks for maths",
+        "i scored high marks in the exam"
       ],
       "responses": [
         "Congratulations! I'm so Proud of You. :D",
@@ -108,7 +138,12 @@
         "I'm Sad!",
         "I feel sad",
         "i am sad",
-        "im sad"
+        "im sad",
+        "im very sad",
+        "im feeling very sad.",
+        "Im feeling very sad today",
+        "im feeling sad",
+        "I sad today"
       ],
       "responses": [
         "Can I Ask Why u are Sad?",
@@ -123,14 +158,14 @@
         "i am bleeding"
       ],
       "responses": [
-        "Oh no! Does it hurt?",
+        "Oh no! Does it hurt alot?",
         "That's sad to hear :( How can I be of help?"
       ]
     },
     {
       "tag": "sad path 1.1",
       "inputs": [
-        "It hurts alot!",
+        "yes It hurts alot!",
         "it hurting alot",
         "It's paining",
         "I am crying"
@@ -182,22 +217,16 @@
         "I feel like i wanna die",
         "I wanna kill myself",
         "I wanna kms",
-        "I wanna die"
-      ],
-      "responses": [
-        "Dont say that. Please reach out to your family or friends. I am always here when you need me to! Please tell me whats on ur mind!"
-      ]
-    },
-    {
-      "tag": "lonely path 1.2",
-      "inputs": [
+        "I wanna die",
         "I hate this place",
         "I wanna leave home",
         "I hate life",
         "I wanna put everything away and just leave"
       ],
       "responses": [
-        "Dont worry. Someday You Will Have A Nice Future. Things might not always be happy and joy. People have downsides and upsides."
+        "Dont say that. Please reach out to your family or friends. I am always here when you need me to! Please tell me whats on ur mind!",
+        "Dont worry. Someday You Will Have A Nice Future. Things might not always be happy and joy. People have downsides and upsides.",
+        "Please talk to someone who is closer to you, a family member or even a friend. I can help you consult a specialist if you want"
       ]
     }
   ]
